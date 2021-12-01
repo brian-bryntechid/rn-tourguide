@@ -1,5 +1,5 @@
 {
-  "name": "@brian-bryntechid/rn-tourguide",
+  "name": "rn-tourguide",
   "version": "3.3.0-rc2",
   "description": "Make an interactive step by step tour guide for your react-native app (a rewrite of react-native-copilot)",
   "types": "lib/index.d.ts",
