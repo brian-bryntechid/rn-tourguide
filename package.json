@@ -2,17 +2,15 @@
   "name": "@brian-bryntechid/rn-tourguide",
   "version": "3.3.0-rc2",
   "description": "Make an interactive step by step tour guide for your react-native app (a rewrite of react-native-copilot)",
-  "main": "node_modules/expo/AppEntry.js",
   "types": "lib/index.d.ts",
   "private": false,
   "scripts": {
-    "start": "yarn config:dev && expo start -c",
-    "start:web": "yarn config:dev && expo start -c -w",
+    "start": "yarn config:dev",
+    "start:web": "yarn config:dev",
     "test": "TZ=Europe/Paris jest --no-watchman",
     "tsc": "node_modules/.bin/tsc --noEmit",
     "tsc:watch": "node_modules/.bin/tsc --noEmit --watch",
     "build": "rm -rf lib/ && node_modules/.bin/tsc",
-    "config:dev": "json -I -f package.json -e 'this.main=\"node_modules/expo/AppEntry.js\"'",
     "config:npm": "json -I -f package.json -e 'this.main=\"lib/index.js\"'",
     "lint": "tslint --project .",
     "verify": "yarn test && yarn lint && yarn tsc && yarn build",
@@ -20,7 +18,7 @@
     "postpublish": "yarn config:dev",
     "cleaning": "rm -rf node_modules && rm -f yarn.lock && yarn cache clean && yarn install && watchman watch-del-all && rm -fr $TMPDIR/react-*",
     "deploy": "gh-pages -d web-build",
-    "predeploy": "yarn verify && expo build:web"
+    "predeploy": "yarn verify"
   },
   "repository": {
     "type": "git",
@@ -48,11 +46,8 @@
     "@types/react-dom": "~17.0.9",
     "@types/react-native": "~0.64.12",
     "@types/react-test-renderer": "16.9.2",
-    "babel-preset-expo": "8.5.1",
-    "expo": "^43.0.0",
     "gh-pages": "2.2.0",
     "jest": "^26.0.1",
-    "jest-expo": "^43.0.1",
     "jest-react-native": "^18.0.0",
     "json": "^10.0.0",
     "react": "17.0.1",
@@ -66,7 +61,6 @@
     "typescript": "~4.3.5"
   },
   "jest": {
-    "preset": "jest-expo",
     "globals": {
       "__TEST__": true
     }
