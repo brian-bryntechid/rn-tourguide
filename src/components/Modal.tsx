@@ -33,11 +33,11 @@ export interface ModalProps {
   backdropColor: string
   labels: Labels
   dismissOnPress?: boolean
-  preventOutsideInteraction?: boolean
   easing: (value: number) => number
   stop: () => void
   next: () => void
   prev: () => void
+  preventOutsideInteraction?: boolean
 }
 
 interface Layout {
